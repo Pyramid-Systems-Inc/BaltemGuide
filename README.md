@@ -1,22 +1,40 @@
 # Baltem Guide App
 
-This is Android App Created with React Native and 
+This is Android App Created with React Native and Expo as frontend, and Node.js with Express as backend with local database.
+This app is used to guide the user to the nearest Baltem Services Like Banks , ATMs , Restaurants , Hospitals , etc. This app is created for the people who are new to the city and don't know the location of the nearest Baltem Services.
+The app is created by Omar Aglan and is licensed under the MIT License.
 
-## Get started
+## Features
 
-1. Install dependencies
+- [ ] Splash Screen
+- [ ] Onboarding Screen
+- [ ] Features Screen
+- [ ] Login with Google
+- [ ] Login with Email and Password
+- [ ] Register with Email and Password
+- [ ] Forgot Password
+- [ ] Reset Password
+- [ ] Change Password
+- [ ] Change Profile
+- [ ] Change Language
+- [ ] Change Theme
+- [ ] Change Language
+- [ ] Search, Sort and Filter Services
+- [ ] Detail Service
+- [ ] Review Service
+- [ ] Add Service to Favorites
+- [ ] Remove Service from Favorites
+- [ ] Share Service
+- [ ] Contact Service
+- [ ] Call Service
+- [ ] Open Service in Maps
+- [ ] Open Service in Browser
+- [ ] Open Service in Phone
+- [ ] Open Service in Email
+- [ ] Open Service in Website
+- [ ] Open Service in Social Media
 
-   ```bash
-   npm install
-   ```
-
-2. Start the app
-
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
+### Development
 
 - [development build](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
