@@ -2,8 +2,7 @@ import { Ionicons } from '@expo/vector-icons';
 import { Link } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-
+import { ActivityIndicator, Image, SafeAreaView, ScrollView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 
 export default function home() {
     const [users, setUsers] = useState([]);
@@ -53,14 +52,16 @@ export default function home() {
                     placeholderTextColor="gray"
                 />
             </View>
-            <ScrollView contentContainerStyle={styles.buttonGrid}>
+            <ScrollView contentContainerStyle={styles.userGrid}>
                 {users.map((user, index) => (
                     <Link key={index} href={{
                         pathname: "/users/[id]",
-                        params: { id: user.id, title: user.title }
+                        params: { id: user.id, name: user.name }
                     }} asChild>
-                        <TouchableOpacity style={styles.button}>
-                            <Text style={styles.buttonText}>{user.title}</Text>
+                        <TouchableOpacity style={styles.userCard}>
+                            <Image source={{ uri: user.photo }} style={styles.avatar} />
+                            <Text style={styles.userName}>{user.name}</Text>
+                            <Text style={styles.userCompany}>{user.company}</Text>
                         </TouchableOpacity>
                     </Link>
                 ))}
@@ -130,6 +131,62 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: 'bold',
         color: 'black',
+        textAlign: 'center',
+    },
+    userGrid: {
+        flexDirection: 'row',
+        flexWrap: 'wrap',
+        justifyContent: 'space-between',
+        padding: 10,
+        marginBottom: 80,
+    },
+    userCard: {
+        width: '48%',
+        aspectRatio: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+        borderRadius: 10,
+        marginBottom: 10,
+        padding: 10,
+    },
+    avatar: {
+        width: '80%',
+        aspectRatio: 1,
+        borderRadius: 50,
+        marginBottom: 10,
+    },
+    userName: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'center',
+    },
+    userCard: {
+        width: '48%',
+        aspectRatio: 1,
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: '#f0f0f0',
+        borderRadius: 10,
+        marginBottom: 10,
+        padding: 10,
+    },
+    avatar: {
+        width: '80%',
+        aspectRatio: 1,
+        borderRadius: 50,
+        marginBottom: 10,
+    },
+    userName: {
+        fontSize: 14,
+        fontWeight: 'bold',
+        color: 'black',
+        textAlign: 'center',
+    },
+    userCompany: {
+        fontSize: 12,
+        color: 'gray',
         textAlign: 'center',
     },
 });
