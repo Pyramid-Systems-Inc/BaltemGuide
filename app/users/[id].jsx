@@ -1,6 +1,6 @@
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useEffect, useState } from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { ActivityIndicator, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
 
 export default function SectionScreen() {
     const { id } = useLocalSearchParams();
@@ -32,19 +32,29 @@ export default function SectionScreen() {
             </View>
         );
     }
+
     return (
-        <View View style={styles.container} >
-            <Text style={styles.title}>{userData.name}</Text>
-            <FlatList
-                data={userData.item}
-                keyExtractor={(item) => item.id.toString()}
-                renderItem={({ item }) => (
-                    <View style={styles.item}>
-                        <Text style={styles.itemTitle}>{item.name}</Text>
-                        <Text style={styles.itemDescription}>{item.username}</Text>
+        <View style={styles.container}>
+            {userData && (
+                <>
+                    <Text style={styles.title}>{userData.name}</Text>
+                    <View style={styles.userInfo}>
+                        <Text style={styles.infoItem}>Company: {userData.company}</Text>
+                        <Text style={styles.infoItem}>Username: {userData.username}</Text>
+                        <Text style={styles.infoItem}>Email: {userData.email}</Text>
+                        <Text style={styles.infoItem}>Address: {userData.address}</Text>
+                        <Text style={styles.infoItem}>Zip: {userData.zip}</Text>
+                        <Text style={styles.infoItem}>State: {userData.state}</Text>
+                        <Text style={styles.infoItem}>Country: {userData.country}</Text>
+                        <Text style={styles.infoItem}>Phone: {userData.phone}</Text>
                     </View>
-                )}
-            />
+                    {userData.photo && (
+                        <View style={styles.photoContainer}>
+                            <Image source={{ uri: userData.photo }} style={styles.photo} />
+                        </View>
+                    )}
+                </>
+            )}
             <TouchableOpacity style={styles.button} onPress={() => router.back()}>
                 <Text style={styles.buttonText}>Go Back to Main Page</Text>
             </TouchableOpacity>
@@ -95,5 +105,21 @@ const styles = StyleSheet.create({
     itemDescription: {
         fontSize: 14,
         color: '#666',
+    },
+    userInfo: {
+        width: '100%',
+        marginBottom: 20,
+    },
+    infoItem: {
+        fontSize: 16,
+        marginBottom: 5,
+    },
+    photoContainer: {
+        marginBottom: 20,
+    },
+    photo: {
+        width: 200,
+        height: 200,
+        borderRadius: 100,
     },
 });
