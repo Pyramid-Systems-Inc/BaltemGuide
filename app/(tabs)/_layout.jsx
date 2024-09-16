@@ -6,12 +6,12 @@ const TabsLayout = () => {
     return (
         <Tabs screenOptions={{
             headerShown: false,
-            tabBarActiveTintColor: '#5b7584',
+            tabBarActiveTintColor: '#000000',
             tabBarInactiveTintColor: 'gray',
             tabBarStyle: {
-                backgroundColor: '#fafafa',
+                backgroundColor: '#d3d3d3',
                 borderTopWidth: 1,
-                borderTopColor: '#e0e0e0',
+                borderTopColor: '#b1b1b1',
                 paddingHorizontal: 20,
                 paddingVertical: 5,
                 height: 70,
@@ -29,33 +29,53 @@ const TabsLayout = () => {
                 shadowOpacity: 0,
                 shadowRadius: 0,
                 borderWidth: 1,
-                borderColor: '#e0e0e0',
+                borderColor: '#b8b8b8',
                 overflow: 'hidden',
-
             }
         }}>
             <Tabs.Screen name="home" options={{
-                headerShown: false,
-                tabBarLabel: 'Home',
-                tabBarIcon: ({ color, size }) => (
-                    <AntDesign name="home" size={24} color="black" />
+                tabBarLabel: 'الوصول',
+                tabBarLabelStyle: {
+                    fontSize: 18,
+                    fontFamily: 'Al-R'
+                },
+
+                tabBarIcon: ({}) => (
+                    <AntDesign name="home" size={25} color="black" />
+                )
+            }} />
+            <Tabs.Screen name="home" options={{
+                tabBarLabel: 'الصفحة الرئيسية',
+                tabBarLabelStyle: {
+                    fontSize: 18,
+                    fontFamily: 'Al-R'
+
+                },
+
+                tabBarIcon: ({}) => (
+                    <AntDesign name="home" size={25} color="black" />
                 )
             }} />
             <Tabs.Screen name="explore" options={{
-                headerShown: false,
-                tabBarLabel: 'Explore',
-                tabBarIcon: ({ color, size }) => (
-                    <AntDesign name="search1" size={24} color="black" />
+                tabBarLabel: 'تصفح',
+                tabBarLabelStyle: {
+                    fontSize: 18,
+                    fontFamily: 'Al-R'
+                },
+                tabBarIcon: ({}) => (
+                    <AntDesign name="search1" size={25} color="black" />
                 )
             }} />
             <Tabs.Screen name="profile" options={{
-                headerShown: false,
-                tabBarLabel: 'Profile',
-                tabBarIcon: ({ color, size }) => (
-                    <AntDesign name="user" size={24} color="black" />
+                tabBarLabel: 'الملف الشخصي',
+                tabBarLabelStyle: {
+                    fontSize: 18,
+                    fontFamily: 'Al-R'
+                },
+                tabBarIcon: ({}) => (
+                    <AntDesign name="user" size={25} color="black" />
                 )
             }} />
-
         </Tabs >
     )
 }
