@@ -4,6 +4,7 @@ import {OnboardingData} from "@/data/onboardingData";
 import LottieView from "lottie-react-native";
 import {useWindowDimensions} from 'react-native';
 import Animated, {Extrapolation, interpolate, SharedValue, useAnimatedStyle} from "react-native-reanimated";
+import {Animations} from "react-native-reanimated/lib/typescript/reanimated2/layoutReanimation/web/config";
 
 
 type Props = {
@@ -13,6 +14,21 @@ type Props = {
 }
 export default function RenderItem({item, index, x}: Props) {
     const {width: SCREEN_WIDTH} = useWindowDimensions();
+
+    const lottieAnimationStyle = useAnimatedStyle(() => {
+        const translateAnimation = interpolate(
+            x.value,
+            [
+                (index - 1) * SCREEN_WIDTH,
+                index * SCREEN_WIDTH,
+                (index + 1) * SCREEN_WIDTH],
+            [200, 0, -200],
+            Extrapolation.CLAMP
+        )
+        return {
+            transform: [{translateY: translateAnimation}]
+        }
+    });
 
     const circleAnmimation = useAnimatedStyle(() => {
         const scale = interpolate(
@@ -45,14 +61,14 @@ export default function RenderItem({item, index, x}: Props) {
 
                 ]}/>
             </View>
-            <View>
+            <Animated.View style={lottieAnimationStyle}>
                 <LottieView
                     source={item.animation}
                     style={{width: SCREEN_WIDTH * 0.9, height:SCREEN_WIDTH*0.9}}
                     autoPlay
                     loop
                 />
-            </View>
+            </Animated.View>
             <Text style={[styles.itemText, {color: item.textColor}]}>{item.text}</Text>
         </View>
     );

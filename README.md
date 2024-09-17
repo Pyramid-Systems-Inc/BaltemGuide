@@ -6,8 +6,8 @@ The app is created by Omar Aglan and is licensed under the MIT License.
 
 ## Features
 
-- [ ] Splash Screen
-- [ ] Onboarding Screen
+- [x] Splash Screen
+- [x] Onboarding Screen
 - [ ] Features Screen
 - [ ] Login with Google
 - [ ] Login with Email and Password
