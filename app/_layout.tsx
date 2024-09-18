@@ -1,24 +1,10 @@
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
 import { ClerkProvider, ClerkLoaded, SignedIn, SignedOut } from '@clerk/clerk-expo';
 import Onboarding from '@/components/Onboarding';
 import LoginScreen from '@/components/LoginScreen';
 import HomeScreen from '@/app/(tabs)/home';
 import TabsLayout from '@/app/(tabs)/_layout';
 import { useFonts } from "expo-font";
-
-const Stack = createStackNavigator();
-
-const linking = {
-    prefixes: ['https://yourapp.com', 'yourapp://'],
-    config: {
-        screens: {
-            Home: 'home',
-            Login: 'login',
-            Onboarding: 'onboarding',
-        },
-    },
-};
+import { Stack } from 'expo-router';
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
@@ -38,19 +24,17 @@ export default function RootLayout() {
 
     return (
         <ClerkProvider publishableKey={publishableKey}>
-            <NavigationContainer linking={linking}>
+
                 <SignedIn>
                     <ClerkLoaded>
-                        <Stack.Navigator screenOptions={{ headerShown: false }}>
-                            <Stack.Screen name="Home" component={TabsLayout} />
-                            <Stack.Screen name="Onboarding" component={Onboarding} />
-                        </Stack.Navigator>
+                        <Stack screenOptions={{headerShown: false}}>
+                            <Stack.Screen name="(tabs)"/>
+                        </Stack>
                     </ClerkLoaded>
                 </SignedIn>
                 <SignedOut>
-                    <LoginScreen />
+                    <Onboarding />
                 </SignedOut>
-            </NavigationContainer>
         </ClerkProvider>
     );
 }
