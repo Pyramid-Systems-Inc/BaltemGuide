@@ -52,6 +52,7 @@ export default function Onboarding() {
                     flatListIndex={flatListIndex}
                     dataLength={data.length}
                     x={x}
+
                 />
             </View>
         </View>
