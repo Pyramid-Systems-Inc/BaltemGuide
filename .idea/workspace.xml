@@ -5,22 +5,55 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e0275fd2-4bb9-45fe-879e-8832c35a2847" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/ArrowIcon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/anim/Lottie1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/anim/Lottie2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/anim/Lottie3.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/Dot.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/customButton.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/pageIndicator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/components/renderItem.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/data/welcomeScreenData.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/screens/WelcomeScreen.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Almarai-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Almarai-ExtraBold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Almarai-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/fonts/Almarai-Regular.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/babel.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/babel.config.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/navigation/appNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/appNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/ArrowIcon.png" beforeDir="false" afterPath="$PROJECT_DIR$/assets/images/ArrowIcon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/Exo-Italic-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/Exo-VariableFont_wght.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/OFL.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/README.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-ExtraBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-ExtraBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-ExtraLight.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-ExtraLightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-SemiBold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-SemiBoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Exo/static/Exo-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/LICENSE.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-Black.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-BlackItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-Bold.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-BoldItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-Italic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-Light.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-LightItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-Medium.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-MediumItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-Regular.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-Thin.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/fonts/Roboto/Roboto-ThinItalic.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/Dot.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/Dot.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/customButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/customButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/components/renderItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/components/renderItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/navigation/appNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/navigation/appNavigation.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/screens/WelcomeScreen.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/screens/WelcomeScreen.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/screens/WelcomeScreen.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -68,6 +101,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\ALX Course\BaltemGuide\assets\fonts" />
+      <recent name="C:\Users\Administrator\Desktop\ALX Course\BaltemGuide\assets\images" />
       <recent name="C:\Users\Administrator\Desktop\ALX Course\BaltemGuide\assets" />
       <recent name="C:\Users\Administrator\Desktop\ALX Course\BaltemGuide\assets\anim" />
     </key>
@@ -106,7 +141,7 @@
       <updated>1726883144711</updated>
       <workItem from="1726883149195" duration="3029000" />
       <workItem from="1727002201718" duration="575000" />
-      <workItem from="1727138343220" duration="7503000" />
+      <workItem from="1727138343220" duration="9092000" />
     </task>
     <servers />
   </component>

@@ -92,7 +92,7 @@ export default function customButton({flatListRef,flatListIndex,dataLength,x,onP
             <Animated.View style={[styles.container, animatedButtonColor,animatedButtonSize]}>
                 <Animated.Text style={[styles.textButton,animatedStartTranslateOpacity]}>أبدء</Animated.Text>
                 <Animated.Image
-                    source={require('../assets/ArrowIcon.png')}
+                    source={require('../assets/images/ArrowIcon.png')}
                     style={[styles.buttonImage, animatedButtonTranslateOpacity]}/>
             </Animated.View>
         </TouchableWithoutFeedback>

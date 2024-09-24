@@ -15,7 +15,7 @@ type Props = {
 export default function dot({index,x}: Props) {
     const {width: SCREEN_WIDTH} = useWindowDimensions();
 
-    const dotAnmimation = useAnimatedStyle(() => {
+    const dotAnimation = useAnimatedStyle(() => {
         const widthAnimation = interpolate(
             x.value,
             [
@@ -54,7 +54,7 @@ export default function dot({index,x}: Props) {
         }
     });
     return (
-        <Animated.View style={[styles.dotContainer, dotAnmimation,AnimatedColor]} />
+        <Animated.View style={[styles.dotContainer, dotAnimation,AnimatedColor]} />
     );
 }
 

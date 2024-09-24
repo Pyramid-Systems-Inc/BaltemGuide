@@ -81,11 +81,11 @@ const styles = StyleSheet.create({
         marginBottom: 100,
     },
     itemText: {
-        fontSize: 44,
+        fontSize: 40,
         textAlign: 'center',
-        fontWeight: 'bold',
         marginBottom: 10,
         marginHorizontal: 20,
+        fontFamily: 'Al-B',
     },
     circleContainer: {
         ...StyleSheet.absoluteFillObject,

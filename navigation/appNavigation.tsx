@@ -97,32 +97,32 @@ function BottomTabNavigator() {
         <Tab.Screen name="home" component={HomeScreen} options={{
             tabBarLabel: 'الصفحة الرئيسية',
             tabBarLabelStyle: {
-                fontSize: 12,
+                fontSize: 10,
                 fontFamily: 'Al-R',
             },
 
             tabBarIcon: ({}) => (
-                <AntDesign name="home" size={20} color="black" />
+                <AntDesign name="home" size={25} color="black" />
             )
         }} />
         <Tab.Screen name="explore" component={ClassWorkScreen} options={{
             tabBarLabel: 'تصفح',
             tabBarLabelStyle: {
-                fontSize: 12,
+                fontSize: 10,
                 fontFamily: 'Al-R'
             },
             tabBarIcon: ({}) => (
-                <AntDesign name="search1" size={20} color="black" />
+                <AntDesign name="search1" size={25} color="black" />
             )
         }} />
         <Tab.Screen name="profile" component={StreamScreen} options={{
             tabBarLabel: 'الملف الشخصي',
             tabBarLabelStyle: {
-                fontSize: 12,
+                fontSize: 10,
                 fontFamily: 'Al-R'
             },
             tabBarIcon: ({}) => (
-                <AntDesign name="user" size={20} color="black" />
+                <AntDesign name="user" size={25} color="black" />
             )
         }} />
     </Tab.Navigator>
