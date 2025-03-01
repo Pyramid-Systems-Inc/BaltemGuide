@@ -1,7 +1,9 @@
 import AppNavigation from './navigation/appNavigation';
 import { StatusBar } from 'expo-status-bar';
 import { useFonts } from "expo-font";
-
+import React from 'react';
+import {ClerkProvider, ClerkLoaded, SignedIn, SignedOut} from '@clerk/clerk-expo'
+import {Text} from 'react-native';
 
 const publishableKey = process.env.EXPO_PUBLIC_CLERK_PUBLISHABLE_KEY!;
 
@@ -19,9 +21,16 @@ export default function App() {
       'Al-L': require('./assets/fonts/Almarai-Light.ttf'),
     });
   return (
-    <>
-      <StatusBar style="dark" />
-      <AppNavigation />
-    </>
+    <ClerkProvider publishableKey={publishableKey}>
+        <ClerkLoaded>
+            <SignedIn>
+                <Text>Hi</Text>
+            </SignedIn>
+            <SignedOut>
+                <StatusBar style="dark" />
+                <AppNavigation />
+            </SignedOut>
+        </ClerkLoaded>
+    </ClerkProvider>
   );
 }
