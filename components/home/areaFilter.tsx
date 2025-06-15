@@ -1,9 +1,13 @@
 import { View, Text } from 'react-native';
 import React, { useState } from 'react';
-import FilterItem from './filterItem';
+import FilterItem from './filterItem'; // Will now import the .tsx version
 
-const AreaFilter = ({ filters }) => {
-  const [selected, setSelected] = useState(filters[0]);
+interface AreaFilterProps {
+  filters: string[];
+}
+
+const AreaFilter: React.FC<AreaFilterProps> = ({ filters }) => {
+  const [selected, setSelected] = useState<string>(filters[0]);
   return (
     <View className="mb-5">
       <Text className="font-exoSemibold text-darkGrayText text-xs capitalize ">

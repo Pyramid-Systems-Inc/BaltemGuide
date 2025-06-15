@@ -1,7 +1,19 @@
-import { Text, TextInput, View } from 'react-native';
+import { TextInput, View } from 'react-native';
 import React from 'react';
 
-const SearchInput = ({ placeholder, Icon, value, onChange }) => {
+interface SearchInputProps {
+  placeholder: string;
+  Icon: React.ComponentType<any>; // Or a more specific type if available for the Icon
+  value: string;
+  onChange: (text: string) => void;
+}
+
+const SearchInput: React.FC<SearchInputProps> = ({
+  placeholder,
+  Icon,
+  value,
+  onChange,
+}) => {
   return (
     <View className={`flex flex-col gap-2 relative `}>
       {/** ====================== Text Input ============================= */}

@@ -1,11 +1,19 @@
 import { View, Text } from 'react-native';
 import React, { useState } from 'react';
-import FilterItem from './filterItem';
+import FilterItem from './filterItem'; // Will import filterItem.tsx
 
-const SubjectFilter = ({ filters, onSubjectSelect }) => {
-  const [selected, setSelected] = useState(filters[0]);
+interface SubjectFilterProps {
+  filters: string[];
+  onSubjectSelect: (subject: string) => void;
+}
 
-  const handleSubjectSelect = (subject) => {
+const SubjectFilter: React.FC<SubjectFilterProps> = ({
+  filters,
+  onSubjectSelect,
+}) => {
+  const [selected, setSelected] = useState<string>(filters[0]);
+
+  const handleSubjectSelect = (subject: string) => {
     setSelected(subject);
     onSubjectSelect(subject); // Notify the parent component of a change
   };

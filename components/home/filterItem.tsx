@@ -1,7 +1,17 @@
 import { View, Text, Pressable } from 'react-native';
 import React from 'react';
 
-const FilterItem = ({ item, selected, setSelected }) => {
+interface FilterItemProps {
+  item: string;
+  selected: string;
+  setSelected: (item: string) => void;
+}
+
+const FilterItem: React.FC<FilterItemProps> = ({
+  item,
+  selected,
+  setSelected,
+}) => {
   const isSelected = selected === item;
   return (
     <Pressable

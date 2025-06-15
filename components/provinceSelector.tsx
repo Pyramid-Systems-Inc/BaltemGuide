@@ -1,11 +1,11 @@
-import { View, Text, Pressable, FlatList, Image } from 'react-native';
+import { View, Text, Pressable, FlatList } from 'react-native';
 import React, { useState } from 'react';
 import { provincesData } from '../assets/data/data';
 
-const ProvinceSelector = () => {
-  const [selectedProvince, setSelectedProvince] = useState('');
+const ProvinceSelector: React.FC = () => {
+  const [selectedProvince, setSelectedProvince] = useState<string>('');
 
-  const selectProvince = (province) => {
+  const selectProvince = (province: string) => {
     console.log('selected province --> ', province);
     setSelectedProvince(province);
   };
@@ -21,7 +21,7 @@ const ProvinceSelector = () => {
           data={provincesData}
           numColumns={2}
           className="w-full mt-2"
-          renderItem={({ item }) => (
+          renderItem={({ item }: { item: string }) => (
             <Pressable
               className={`flex space-x-3 flex-row w-[45%] items-center justify-center m-2 rounded-[10px] py-3 ${
                 selectedProvince === item ? 'bg-bgPurple' : 'bg-bgLightGray2'
@@ -39,7 +39,7 @@ const ProvinceSelector = () => {
               </Text>
             </Pressable>
           )}
-          keyExtractor={(item, index) => index}
+          keyExtractor={(item: string) => item}
         />
       </View>
     </View>

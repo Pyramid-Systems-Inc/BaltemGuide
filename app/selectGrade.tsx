@@ -1,10 +1,10 @@
 import { Platform, Text, View } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import SubjectPicker from '../components/subjectSelector.js';
+import SubjectPicker from '../components/subjectSelector';
 import { locData } from '../assets/data/data';
-import HeaderText from '../components/headerText.js';
-import Button from '../components/button.js';
+import HeaderText from '../components/headerText';
+import Button from '../components/button';
 import { useRouter } from 'expo-router';
 
 const SelectGradeScreen = () => {

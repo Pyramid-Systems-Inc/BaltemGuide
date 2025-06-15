@@ -1,16 +1,27 @@
-import { View, Text, Pressable, FlatList, Image } from 'react-native';
+import { View, Text, Pressable, FlatList, Image, ImageSourcePropType } from 'react-native';
 import React, { useState } from 'react';
 import { ChevronDownIcon, ChevronUpIcon } from 'react-native-heroicons/solid';
 import { themeColors } from '../theme';
-import { images } from '../assets';
+// Import images directly for ImageSourcePropType
+import paint from '../assets/images/paint.png';
+import microscope from '../assets/images/microscope.png';
+import ruler from '../assets/images/ruler.png';
+import numbers from '../assets/images/numbers.png';
 
-const { ruler, paint, numbers, microscope } = images;
+interface SubjectOption {
+  label: string;
+  image: ImageSourcePropType;
+}
 
-const SubjectSelector = ({ grades }) => {
-  const [showDropDown, setShowDropDown] = useState(false);
-  const [selectedSubject, setSelectedSubject] = useState('');
+interface SubjectSelectorProps {
+  grades: string;
+}
 
-  const subjectOptions = [
+const SubjectSelector: React.FC<SubjectSelectorProps> = ({ grades }) => {
+  const [showDropDown, setShowDropDown] = useState<boolean>(false);
+  const [selectedSubject, setSelectedSubject] = useState<string>('');
+
+  const subjectOptions: SubjectOption[] = [
     { label: 'Arts', image: paint },
     { label: 'Science', image: microscope },
     { label: 'Math', image: ruler },
@@ -21,7 +32,7 @@ const SubjectSelector = ({ grades }) => {
     setShowDropDown(!showDropDown);
   };
 
-  const selectSubject = (subject) => {
+  const selectSubject = (subject: string) => {
     console.log('selected grade --> ', subject);
     setSelectedSubject(subject);
   };
@@ -29,12 +40,12 @@ const SubjectSelector = ({ grades }) => {
   return (
     <View className="flex justify-center bg-bgLightGray min-h-14 py-4 rounded-lg mb-[18px]">
       <Pressable onPress={toggleDropdown} className="flex px-4">
-        <View className="flex  items-center justify-between flex-row">
+        <View className="flex items-center justify-between flex-row">
           <Text className="font-exo font-semibold text-lg">{grades}</Text>
           {!showDropDown ? (
-            <ChevronDownIcon style={{ color: themeColors.darkGrayText }} />
+            <ChevronDownIcon color={themeColors.darkGrayText} />
           ) : (
-            <ChevronUpIcon style={{ color: themeColors.darkGrayText }} />
+            <ChevronUpIcon color={themeColors.darkGrayText} />
           )}
         </View>
 
@@ -44,16 +55,16 @@ const SubjectSelector = ({ grades }) => {
             data={subjectOptions}
             numColumns={2}
             className="w-full mt-2"
-            renderItem={({ item }) => (
+            renderItem={({ item }: { item: SubjectOption }) => (
               <Pressable
                 className={`flex space-x-3 flex-row w-[45%] items-center justify-center m-2 rounded-[10px] py-3 ${
                   selectedSubject === item.label
                     ? 'bg-bgPurple'
                     : 'bg-bgLightGray2'
                 }`}
-                onPress={() => selectSubject(item?.label)}
+                onPress={() => selectSubject(item.label)}
               >
-                <Image source={item?.image} style={{ height: 20, width: 20 }} />
+                <Image source={item.image} style={{ height: 20, width: 20 }} />
                 <Text
                   className={`text-center font-exo font-semibold text-base ${
                     selectedSubject === item.label
@@ -61,11 +72,11 @@ const SubjectSelector = ({ grades }) => {
                       : 'text-darkGrayText'
                   }`}
                 >
-                  {item?.label}
+                  {item.label}
                 </Text>
               </Pressable>
             )}
-            keyExtractor={(item) => item?.label}
+            keyExtractor={(item: SubjectOption) => item.label}
           />
         ) : null}
       </Pressable>

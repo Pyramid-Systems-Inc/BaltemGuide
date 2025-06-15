@@ -1,8 +1,21 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ImageSourcePropType } from 'react-native';
 import React from 'react';
-import Rating from './rating';
+import Rating from './rating'; // Will now import the .tsx version
 
-const FuturedItem = ({ institution }) => {
+interface Institution {
+  image: ImageSourcePropType;
+  name: string;
+  rating: number;
+  reviews: string | number; // reviews can be a string like "1.2k" or a number
+  field: string;
+  description: string;
+}
+
+interface FuturedItemProps {
+  institution: Institution;
+}
+
+const FuturedItem: React.FC<FuturedItemProps> = ({ institution }) => {
   return (
     <View className="bg-white rounded-xl flex flex-row w-full min-h-[176px] items-center justify-between p-2 mb-4 shadow">
       {/**============== Institution Image ================ */}

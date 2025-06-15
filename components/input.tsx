@@ -1,7 +1,23 @@
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View, TextInputProps } from 'react-native';
 import React from 'react';
 
-const Input = ({ label, placeholder, last = false, Icon, value, onChange }) => {
+interface InputProps {
+  label: string;
+  placeholder: string;
+  last?: boolean;
+  Icon?: React.ComponentType<any>; // Or a more specific type if available for the Icon
+  value: string;
+  onChange: (text: string) => void;
+}
+
+const Input: React.FC<InputProps> = ({
+  label,
+  placeholder,
+  last = false,
+  Icon,
+  value,
+  onChange,
+}) => {
   return (
     <View
       className={`flex flex-col gap-2 relative w-full ${last ? '' : 'mb-5'}`}
@@ -21,7 +37,7 @@ const Input = ({ label, placeholder, last = false, Icon, value, onChange }) => {
           secureTextEntry={label === 'Password'}
         />
         {/** ====================== Optional Icon ============================= */}
-        {Boolean(Icon) ? (
+        {Icon ? (
           <Icon
             className="text-lightGrayText absolute right-0 mr-4"
             size={20}

@@ -1,7 +1,17 @@
-import { View, Text, Image } from 'react-native';
+import { View, Text, Image, ImageSourcePropType } from 'react-native';
 import React from 'react';
 
-const LocItem = ({ teacher }) => {
+interface Teacher {
+  image: ImageSourcePropType;
+  name: string;
+  subject: string;
+}
+
+interface LocItemProps {
+  teacher: Teacher;
+}
+
+const LocItem: React.FC<LocItemProps> = ({ teacher }) => {
   return (
     <View className="max-w-[126px] min-h-[176px] bg-white p-2 rounded-xl shadow mx-2">
       {/**============== Teacher Image ================ */}

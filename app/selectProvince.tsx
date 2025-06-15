@@ -1,9 +1,9 @@
 import { Text, View } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import HeaderText from '../components/headerText.js';
-import Button from '../components/button.js';
-import ProvinceSelector from '../components/provinceSelector.js';
+import HeaderText from '../components/headerText';
+import Button from '../components/button';
+import ProvinceSelector from '../components/provinceSelector';
 import { useRouter } from 'expo-router';
 
 const SelectProvinceScreen = () => {
