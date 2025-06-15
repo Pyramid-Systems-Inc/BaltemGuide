@@ -1,10 +1,10 @@
 import { Pressable as RNPressable, Text as RNText, View as RNView } from 'react-native';
 import React from 'react';
-import { styled } from 'nativewind';
+import { cssInterop } from "nativewind";
 
-const View = styled(RNView);
-const Text = styled(RNText);
-const Pressable = styled(RNPressable);
+cssInterop(RNView, { className: "style" });
+cssInterop(RNText, { className: "style" });
+cssInterop(RNPressable, { className: "style" });
 
 interface ButtonProps {
   onPrimaryBtnPress: () => void;
@@ -24,30 +24,30 @@ const Button: React.FC<ButtonProps> = ({
   onSecondaryBtnPress,
 }) => {
   return (
-    <View className="flex flex-col items-center gap-8">
+    <RNView className="flex flex-col items-center gap-8">
       {/** ====================== Main Button ============================= */}
-      <Pressable
+      <RNPressable
         onPress={onPrimaryBtnPress}
         className="py-3 bg-bgPurple px-7 rounded-xl w-[267px] max-h-[61px] flex items-center justify-center"
       >
-        <Text className="text-xl font-exoSemibold text-center text-bgWhite">
+        <RNText className="text-xl font-exoSemibold text-center text-bgWhite">
           {primaryBtnText}
-        </Text>
-      </Pressable>
+        </RNText>
+      </RNPressable>
       {/** ====================== Secondary pressable ============================= */}
       {showSecondaryBtn ? (
-        <View className="flex-row justify-center">
-          <Text className="text-darkGrayText font-exo text-lg">
+        <RNView className="flex-row justify-center">
+          <RNText className="text-darkGrayText font-exo text-lg">
             {secondaryBtnText1}{' '}
-          </Text>
-          <Pressable onPress={onSecondaryBtnPress}>
-            <Text className="font-exo text-bgPurple text-lg">
+          </RNText>
+          <RNPressable onPress={onSecondaryBtnPress}>
+            <RNText className="font-exo text-bgPurple text-lg">
               {secondaryBtnText2}
-            </Text>
-          </Pressable>
-        </View>
+            </RNText>
+          </RNPressable>
+        </RNView>
       ) : null}
-    </View>
+    </RNView>
   );
 };
 
