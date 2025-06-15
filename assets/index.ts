@@ -18,7 +18,29 @@ import exploreIcon from './images/exploreIcon.png';
 import classWorkIcon from './images/classWorkIcon.png';
 import funnel from './images/funnel.png';
 
-export const images = {
+interface ImageSources {
+  microscope: string;
+  numbers: string;
+  paint: string;
+  ruler: string;
+  signin: string;
+  signup: string;
+  welcome: string;
+  locF1: string;
+  locF2: string;
+  locF3: string;
+  loc1: string;
+  loc2: string;
+  loc3: string;
+  loc4: string;
+  avatar: string;
+  streamIcon: string;
+  exploreIcon: string;
+  classWorkIcon: string;
+  funnel: string;
+}
+
+export const images: ImageSources = {
   microscope,
   numbers,
   paint,

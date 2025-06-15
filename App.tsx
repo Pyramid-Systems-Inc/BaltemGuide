@@ -1,3 +1,4 @@
+import "./global.css";
 // App.tsx
 import React from 'react';
 import { View } from 'react-native';

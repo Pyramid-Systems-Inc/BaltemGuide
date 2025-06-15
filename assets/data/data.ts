@@ -1,20 +1,26 @@
 import { images } from '..';
 
-const { loc1, loc2, loc3, loc4, locF1, locF2, locF3 } =
+const { loc1, loc2, loc3, loc4, locF1, locF2, locF3 }: { [key: string]: any } =
   images;
-export const welcomeScreenData = {
+
+interface WelcomeScreenData {
+  title: string;
+  subtitle: string;
+}
+
+export const welcomeScreenData: WelcomeScreenData = {
   title: `Find Your Services Around You`,
   subtitle: `Please Sign in to view personalized recommendations`,
 };
 
-export const locData = [
+export const locData: string[] = [
   '1',
   '2',
   '3',
   '4',
 ];
 
-export const provincesData = [
+export const provincesData: string[] = [
   '1',
   '2',
   '3',
@@ -26,7 +32,13 @@ export const provincesData = [
   '9',
 ];
 
-export const locFullData = [
+interface LocFullDataItem {
+  name: string;
+  subject: string;
+  image: any; // Assuming image can be any type, adjust if specific type is known
+}
+
+export const locFullData: LocFullDataItem[] = [
   {
     name: 'Loc 1',
     subject: 'Type',
@@ -49,7 +61,16 @@ export const locFullData = [
   },
 ];
 
-export const locFFullData = [
+interface LocFFullDataItem {
+  name: string;
+  field: string;
+  description: string;
+  rating: string;
+  reviews: string;
+  image: any; // Assuming image can be any type, adjust if specific type is known
+}
+
+export const locFFullData: LocFFullDataItem[] = [
   {
     name: 'LocF 1',
     field: 'Type',
@@ -87,9 +108,9 @@ export const locFFullData = [
   },
 ];
 
-export const type2Filters = ['1', '2', '3'];
+export const type2Filters: string[] = ['1', '2', '3'];
 
-export const typeFilters = [
+export const typeFilters: string[] = [
   '1',
   '2',
   '3',
