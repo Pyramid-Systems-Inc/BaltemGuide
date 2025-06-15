@@ -2,14 +2,14 @@ import {View, FlatList, StyleSheet, ViewToken} from 'react-native';
 import React from 'react';
 import Animated, {useAnimatedRef, useAnimatedScrollHandler, useSharedValue} from 'react-native-reanimated';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
 import data, {WelcomeScreenData} from "../data/welcomeScreenData";
 import RenderItem from "../components/renderItem";
 import PageIndicator from "../components/pageIndicator";
 import CustomButton from "../components/customButton";
 
 export default function WelcomeScreen() {
-    const navigation = useNavigation();
+    const router = useRouter();
     /**
  * Reference to the FlatList component for animated operations.
  * @type {React.RefObject<FlatList<WelcomeScreenData>>}
@@ -72,7 +72,7 @@ const flatListIndex = useSharedValue(0);
                 flatListIndex={flatListIndex}
                 dataLength={data.length}
                 x={x}
-                onPrimaryBtnPress={() => navigation.navigate('SignIn' as never)}
+                onPrimaryBtnPress={() => router.push('/signIn')}
              />
         </View>
     </SafeAreaView>

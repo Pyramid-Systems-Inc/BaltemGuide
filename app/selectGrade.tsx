@@ -1,14 +1,14 @@
 import { Platform, Text, View } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import SubjectPicker from '../components/subjectSelector';
-import { locData } from '../assets/data/data';
-import HeaderText from '../components/headerText';
-import Button from '../components/button';
-import { useNavigation } from '@react-navigation/native';
+import SubjectPicker from '../components/subjectSelector.js';
+import { locData } from '../assets/data/data.js';
+import HeaderText from '../components/headerText.js';
+import Button from '../components/button.js';
+import { useRouter } from 'expo-router';
 
 const SelectGradeScreen = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
   return (
     <SafeAreaView className="px-7 py-8">
       {/** ============== Header text component =========== */}
@@ -25,9 +25,10 @@ const SelectGradeScreen = () => {
       <View className={Platform.OS === 'ios' ? 'mt-[30%]' : 'mt-[10%]'}>
         <Button
           primaryBtnText={'Next'}
-          onPrimaryBtnPress={() => navigation.navigate('SelectProvince')}
+          onPrimaryBtnPress={() => router.push('/selectProvince')}
+          secondaryBtnText1={''} // Added to satisfy the component's prop requirements
           secondaryBtnText2={'Skip'}
-          onSecondaryBtnPress={() => navigation.navigate('SelectProvince')}
+          onSecondaryBtnPress={() => router.push('/selectProvince')}
         />
       </View>
     </SafeAreaView>

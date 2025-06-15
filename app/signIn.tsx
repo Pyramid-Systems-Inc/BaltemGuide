@@ -8,7 +8,7 @@ import {
 } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
+import { useRouter } from 'expo-router';
 import { images } from '../assets';
 import Button from '../components/button';
 import Input from '../components/input';
@@ -17,7 +17,7 @@ import { EyeIcon } from 'react-native-heroicons/solid';
 const { signin } = images;
 
 export default function SignInScreen() {
-  const navigation = useNavigation();
+  const router = useRouter();
   return (
     <SafeAreaView className="flex-1 bg-bgWhite px-8">
       <View className="flex-1 flex justify-around my-4">
@@ -40,10 +40,10 @@ export default function SignInScreen() {
         {/** ====================== Action button ============================= */}
         <Button
           primaryBtnText={'Sign In'}
-          onPrimaryBtnPress={() => navigation.navigate('Home')}
+          onPrimaryBtnPress={() => router.replace('/home')}
           secondaryBtnText1={"Don't have an account?"}
           secondaryBtnText2={'Sign Up'}
-          onSecondaryBtnPress={() => navigation.navigate('SignUp')}
+          onSecondaryBtnPress={() => router.push('/signUp')}
         />
       </View>
     </SafeAreaView>

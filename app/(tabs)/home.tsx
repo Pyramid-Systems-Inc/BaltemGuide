@@ -8,26 +8,26 @@ import {
 } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import HeaderText from '../components/headerText';
-import { getLocalGreeting } from '../utils/helpers';
-import { images } from '../assets';
-import SearchInput from '../components/home/searchInput';
+import HeaderText from '../../components/headerText';
+import { getLocalGreeting } from '../../utils/helpers';
+import { images } from '../../assets';
+import SearchInput from '../../components/home/searchInput';
 import {
   MagnifyingGlassIcon,
   AdjustmentsVerticalIcon,
 } from 'react-native-heroicons/outline';
-import { themeColors } from '../theme';
-import LocItem from '../components/home/locItem';
+import { themeColors } from '../../theme';
+import LocItem from '../../components/home/locItem';
 import {
   type2Filters,
   locFFullData,
   typeFilters,
   locFullData,
-} from '../assets/data/data';
-import FuturedItem from '../components/home/futuredItem';
-import SectionHeader from '../components/home/sectionHeader';
-import AreaFilter from '../components/home/areaFilter';
-import SubjectFilter from '../components/home/subjectFilter';
+} from '../../assets/data/data';
+import FuturedItem from '../../components/home/futuredItem';
+import SectionHeader from '../../components/home/sectionHeader';
+import AreaFilter from '../../components/home/areaFilter';
+import SubjectFilter from '../../components/home/subjectFilter';
 
 const { avatar } = images;
 

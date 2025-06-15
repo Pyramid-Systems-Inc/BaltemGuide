@@ -1,16 +1,16 @@
 import { View, Text, Image, TouchableOpacity, Pressable } from 'react-native';
 import React, { useState } from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { useNavigation } from '@react-navigation/native';
-import { images } from '../assets';
-import Button from '../components/button';
-import Input from '../components/input';
+import { useRouter } from 'expo-router';
+import { images } from '../assets'; // Corrected path
+import Button from '../components/button'; // Corrected path
+import Input from '../components/input'; // Corrected path
 import { EyeIcon } from 'react-native-heroicons/solid';
 
 const { signup } = images;
 
 export default function SignUpScreen() {
-  const navigation = useNavigation();
+  const router = useRouter(); // Changed from useNavigation
 
   const [userData, setUserData] = useState({
     name: '',
@@ -25,7 +25,7 @@ export default function SignUpScreen() {
   const handleSubmit = () => {
     // Navigate to the next screen with user data
     console.log('user data --> ', userData);
-    navigation.navigate('SelectGrade', { userData });
+    router.push({ pathname: '/selectGrade', params: { userData: JSON.stringify(userData) } });
   };
 
   return (
@@ -42,16 +42,20 @@ export default function SignUpScreen() {
             placeholder={'Your name'}
             value={userData.name}
             onChange={(text) => handleInputChange('name', text)}
+            Icon={undefined} // Assuming Icon can be undefined if not provided
           />
           <Input
             label={'Email address'}
             placeholder={'name@example.com'}
+            value={userData.email}
             onChange={(text) => handleInputChange('email', text)}
+            Icon={undefined} // Assuming Icon can be undefined if not provided
           />
           <Input
             label={'Password'}
             placeholder={'**********'}
             Icon={EyeIcon}
+            value={userData.password}
             onChange={(text) => handleInputChange('password', text)}
             last
           />
@@ -63,7 +67,7 @@ export default function SignUpScreen() {
           onPrimaryBtnPress={handleSubmit}
           secondaryBtnText1={'Already have an account?'}
           secondaryBtnText2={'Sign In'}
-          onSecondaryBtnPress={() => navigation.navigate('SignIn')}
+          onSecondaryBtnPress={() => router.push('/signIn')}
         />
       </View>
     </SafeAreaView>

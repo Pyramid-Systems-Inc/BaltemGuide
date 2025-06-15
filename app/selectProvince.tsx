@@ -1,13 +1,13 @@
 import { Text, View } from 'react-native';
 import React from 'react';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import HeaderText from '../components/headerText';
-import Button from '../components/button';
-import ProvinceSelector from '../components/provinceSelector';
-import { useNavigation } from '@react-navigation/native';
+import HeaderText from '../components/headerText.js';
+import Button from '../components/button.js';
+import ProvinceSelector from '../components/provinceSelector.js';
+import { useRouter } from 'expo-router';
 
 const SelectProvinceScreen = () => {
-  const navigation = useNavigation();
+  const router = useRouter();
 
   return (
     <SafeAreaView className="px-7 py-8">
@@ -23,9 +23,10 @@ const SelectProvinceScreen = () => {
       <View className="mt-[25%]">
         <Button
           primaryBtnText={'Next'}
-          onPrimaryBtnPress={() => navigation.navigate('Home')}
+          onPrimaryBtnPress={() => router.replace('/(tabs)')}
+          secondaryBtnText1={''}
           secondaryBtnText2={'Skip'}
-          onSecondaryBtnPress={() => navigation.navigate('Home')}
+          onSecondaryBtnPress={() => router.replace('/(tabs)')}
         />
       </View>
     </SafeAreaView>
