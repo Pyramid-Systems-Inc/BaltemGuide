@@ -1,9 +1,9 @@
 // function for getting time and returning a greeting based on current time
-export function getLocalGreeting() {
+export function getLocalGreeting(): string {
   const now = new Date();
   const hours = now.getHours();
 
-  let greeting;
+  let greeting: string;
 
   if (hours >= 5 && hours < 12) {
     greeting = 'Good morning!';
