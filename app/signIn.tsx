@@ -40,7 +40,7 @@ export default function SignInScreen() {
         {/** ====================== Action button ============================= */}
         <Button
           primaryBtnText={'Sign In'}
-          onPrimaryBtnPress={() => router.replace('/home')}
+          onPrimaryBtnPress={() => router.replace('/(tabs)/home')}
           secondaryBtnText1={"Don't have an account?"}
           secondaryBtnText2={'Sign Up'}
           onSecondaryBtnPress={() => router.push('/signUp')}
